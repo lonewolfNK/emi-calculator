@@ -7,7 +7,7 @@
  *
  * @return {object}
  */
-function Loan (amount, installmentsNumber, interestRate) {
+function Loan(amount, installmentsNumber, interestRate) {
   /** Checking params */
   // function Loan
   if (!amount || amount <= 0 ||
@@ -21,7 +21,7 @@ function Loan (amount, installmentsNumber, interestRate) {
   let principalSum = 0
   let sum = 0
 
-  for (let i = 0; i <= installmentsNumber; i++) {
+  for (let i = 0; i < installmentsNumber; i++) {
     const inst = getNextInstallment(
       amount, installmentsNumber, interestRate, principalSum, interestSum
     )
@@ -84,7 +84,7 @@ const getNextInstallment = (
  *
  * @return {string}       html string with table
  */
-function emiToHtmlTable (loan, params) {
+function emiToHtmlTable(loan, params) {
   params = params || {}
   params.formatMoney = params.formatMoney || function (num) {
     return num.toFixed(2)
@@ -137,7 +137,7 @@ function emiToHtmlTable (loan, params) {
   return html.join('')
 }
 
-function rnd (num) {
+function rnd(num) {
   return Math.round(num * 100) / 100
 }
 
